@@ -415,7 +415,6 @@ extension RSSelectionMenu {
         tobePresentController.view.tintColor = UIColor(red: 166/255, green: 25/255, blue: 46/255, alpha: 1)
         from.present(tobePresentController, animated: true) {
             tobePresentController.view.superview?.subviews[0].isUserInteractionEnabled = false
-            
         }
     }
     
@@ -424,6 +423,7 @@ extension RSSelectionMenu {
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: style)
         
         if let title = title {
+            
             var attributedTitle = NSMutableAttributedString()
             attributedTitle = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font:UIFont(name: "IowanOldSt OSF BT", size: 21.0)!])
             attributedTitle.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 166/255, green: 25/255, blue: 46/255, alpha: 1), range: NSRange(location:0,length:title.count))
@@ -432,6 +432,8 @@ extension RSSelectionMenu {
         }
         
         let actionTitle = action ?? doneButtonTitle
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
         let doneAction = UIAlertAction(title: actionTitle, style: .cancel) { [weak self] (doneButton) in
             self?.menuWillDismiss()
         }
