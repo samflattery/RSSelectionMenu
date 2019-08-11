@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A0F710223006238004F1861 /* Iowan Old Style W01 Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A0F710023006237004F1861 /* Iowan Old Style W01 Roman.ttf */; };
+		0A0F710323006238004F1861 /* IowanOldSt_OSF_BT_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A0F710123006237004F1861 /* IowanOldSt_OSF_BT_Bold.ttf */; };
 		864713E321DDE62000F6B96C /* DecodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864713E221DDE62000F6B96C /* DecodableExtension.swift */; };
 		864713E521DDE6AE00F6B96C /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864713E421DDE6AE00F6B96C /* ViewControllerExtension.swift */; };
 		864713E921DDE76800F6B96C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864713E821DDE76800F6B96C /* Enums.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0F710023006237004F1861 /* Iowan Old Style W01 Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Iowan Old Style W01 Roman.ttf"; path = "../../../../FCE++/backend/fonts/Iowan Old Style W01 Roman.ttf"; sourceTree = "<group>"; };
+		0A0F710123006237004F1861 /* IowanOldSt_OSF_BT_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = IowanOldSt_OSF_BT_Bold.ttf; path = "../../../../FCE++/backend/fonts/IowanOldSt_OSF_BT_Bold.ttf"; sourceTree = "<group>"; };
 		864713E221DDE62000F6B96C /* DecodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableExtension.swift; sourceTree = "<group>"; };
 		864713E421DDE6AE00F6B96C /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		864713E821DDE76800F6B96C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				D852FD9F1F879BF6002362CC /* RSSelectionMenuController.swift */,
+				0A0F710023006237004F1861 /* Iowan Old Style W01 Roman.ttf */,
+				0A0F710123006237004F1861 /* IowanOldSt_OSF_BT_Bold.ttf */,
 				D852FDA31F879BF6002362CC /* RSSelectionTableView.swift */,
 				D852FDA01F879BF6002362CC /* RSSelectionMenuDataSource.swift */,
 				D852FDA11F879BF6002362CC /* RSSelectionMenuDelegate.swift */,
@@ -205,6 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0F710323006238004F1861 /* IowanOldSt_OSF_BT_Bold.ttf in Resources */,
+				0A0F710223006238004F1861 /* Iowan Old Style W01 Roman.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

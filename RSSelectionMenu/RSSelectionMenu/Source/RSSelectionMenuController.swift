@@ -414,6 +414,9 @@ extension RSSelectionMenu {
         }
         
         from.present(tobePresentController, animated: true, completion: nil)
+        from.present(tobePresentController, animated: true) {
+            tobePresentController.view.superview?.subviews[0].isUserInteractionEnabled = false
+        }
     }
     
     // get alert controller
@@ -421,7 +424,7 @@ extension RSSelectionMenu {
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: style)
         
         let actionTitle = action ?? doneButtonTitle
-        let doneAction = UIAlertAction(title: actionTitle, style: .cancel) { [weak self] (doneButton) in
+        let doneAction = UIAlertAction(title: actionTitle, style: .destructive) { [weak self] (doneButton) in
             self?.menuWillDismiss()
         }
         
