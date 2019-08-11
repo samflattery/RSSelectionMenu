@@ -27,7 +27,7 @@ import UIKit
 
 /// RSSelectionMenuController
 open class RSSelectionMenu<T>: UIViewController, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
-
+    
     // MARK: - Views
     public var tableView: RSSelectionTableView<T>?
     
@@ -111,7 +111,7 @@ open class RSSelectionMenu<T>: UIViewController, UIPopoverPresentationController
         
         // delegate
         let selectionDelegate = RSSelectionMenuDelegate<T>(selectedItems: [])
-     
+        
         // initilize tableview
         self.tableView = RSSelectionTableView<T>(selectionStyle: selectionStyle, cellType: cellType, dataSource: selectionDataSource, delegate: selectionDelegate, from: self)
     }
@@ -122,7 +122,7 @@ open class RSSelectionMenu<T>: UIViewController, UIPopoverPresentationController
         super.viewDidLoad()
         
         setupViews()
-        setupLayout()        
+        setupLayout()
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -172,7 +172,7 @@ open class RSSelectionMenu<T>: UIViewController, UIPopoverPresentationController
     
     override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    
+        
         setTableViewFrame()
     }
     
@@ -189,7 +189,7 @@ open class RSSelectionMenu<T>: UIViewController, UIPopoverPresentationController
             var tableViewSize = CGSize.zero
             
             if UIDevice.current.userInterfaceIdiom == .phone {
-            
+                
                 if UIApplication.shared.statusBarOrientation == .portrait {
                     tableViewSize = CGSize(width: backgroundView.frame.size.width - 80, height: backgroundView.frame.size.height - 260)
                 }else {
@@ -325,7 +325,7 @@ extension RSSelectionMenu {
             case .push?:
                 self?.navigationController?.popViewController(animated: animated!)
             case .present?, .popover?, .formSheet?, .alert?, .actionSheet?:
-               self?.dismiss(animated: animated!, completion: nil)
+                self?.dismiss(animated: animated!, completion: nil)
             case .none:
                 break
             }
@@ -335,7 +335,7 @@ extension RSSelectionMenu {
 
 //MARK:- Private
 extension RSSelectionMenu {
-
+    
     // check if show rightBarButton
     fileprivate func showRightBarButton() -> Bool {
         switch menuPresentationStyle {
@@ -412,11 +412,10 @@ extension RSSelectionMenu {
                 popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
             }
         }
-        
+        tobePresentController.view.tintColor = UIColor(red: 166/255, green: 25/255, blue: 46/255, alpha: 1)
         from.present(tobePresentController, animated: true) {
             tobePresentController.view.superview?.subviews[0].isUserInteractionEnabled = false
-            tobePresentController.view.tintColor = UIColor.red
-
+            
         }
     }
     
@@ -429,7 +428,7 @@ extension RSSelectionMenu {
             attributedTitle = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font:UIFont(name: "IowanOldSt OSF BT", size: 21.0)!])
             attributedTitle.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 166/255, green: 25/255, blue: 46/255, alpha: 1), range: NSRange(location:0,length:title.count))
             alertController.setValue(attributedTitle, forKey: "attributedTitle")
-
+            
         }
         
         let actionTitle = action ?? doneButtonTitle
@@ -456,8 +455,8 @@ extension RSSelectionMenu {
             if case .popover = self.menuPresentationStyle {
                 navigationBar.isHidden = true
             }
-            
-            // check for present style
+                
+                // check for present style
             else if case .present = self.menuPresentationStyle, let parentNavigationBar = self.parentController?.navigationController?.navigationBar {
                 
                 navigationBar.titleTextAttributes = parentNavigationBar.titleTextAttributes
