@@ -415,6 +415,8 @@ extension RSSelectionMenu {
         
         from.present(tobePresentController, animated: true) {
             tobePresentController.view.superview?.subviews[0].isUserInteractionEnabled = false
+            tobePresentController.view.tintColor = UIColor.red
+
         }
     }
     
@@ -424,9 +426,10 @@ extension RSSelectionMenu {
         
         if let title = title {
             var attributedTitle = NSMutableAttributedString()
-            attributedTitle = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font:UIFont(name: "IowanOldSt OSF BT", size: 18.0)!])
+            attributedTitle = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font:UIFont(name: "IowanOldSt OSF BT", size: 21.0)!])
             attributedTitle.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 166/255, green: 25/255, blue: 46/255, alpha: 1), range: NSRange(location:0,length:title.count))
             alertController.setValue(attributedTitle, forKey: "attributedTitle")
+
         }
         
         let actionTitle = action ?? doneButtonTitle
