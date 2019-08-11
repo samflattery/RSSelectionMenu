@@ -93,6 +93,12 @@ open class RSSelectionMenu<T>: UIViewController, UIPopoverPresentationController
     fileprivate var backgroundView = UIView()
     
     
+    // MARK:- Dismiss when tapped outside
+    @objc func tappedOutside() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     // MARK: - Init
     
     convenience public init(dataSource: DataSource<T>, cellConfiguration configuration: @escaping UITableViewCellConfiguration<T>) {
@@ -413,9 +419,13 @@ extension RSSelectionMenu {
             }
         }
         tobePresentController.view.tintColor = UIColor(red: 166/255, green: 25/255, blue: 46/255, alpha: 1)
+
         from.present(tobePresentController, animated: true) {
             tobePresentController.view.superview?.subviews[0].isUserInteractionEnabled = false
+            tobePresentController.view.superview?.isUserInteractionEnabled = true
+            tobePresentController.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tappedOutside)))
         }
+        
     }
     
     // get alert controller
@@ -432,8 +442,6 @@ extension RSSelectionMenu {
         }
         
         let actionTitle = action ?? doneButtonTitle
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
         let doneAction = UIAlertAction(title: actionTitle, style: .cancel) { [weak self] (doneButton) in
             self?.menuWillDismiss()
         }
