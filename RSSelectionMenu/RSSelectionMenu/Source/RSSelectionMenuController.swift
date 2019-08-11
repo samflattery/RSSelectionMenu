@@ -426,9 +426,7 @@ extension RSSelectionMenu {
         }
         
         // add done action
-        if (tableView?.selectionStyle == .multiple || !self.dismissAutomatically)  {
-            alertController.addAction(doneAction)
-        }
+        alertController.addAction(doneAction)
         
         let viewHeight = height ?? 350
         alertController.preferredContentSize.height = CGFloat(viewHeight)
